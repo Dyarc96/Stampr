@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGoogle, faFacebook } from '@fortawesome/free-brands-svg-icons';
 
 import logo from 'assets/logo.png';
 import { NavList, NavListItem, NavListLink, LogoContainer,
@@ -23,14 +25,14 @@ const Navigation = (props) => {
         if(strategy === 'google') {
             return (
                 <Button google>
-                    <i className="fab fa-google fa-2x"></i>
+                    <FontAwesomeIcon icon={faGoogle} size="2x"/>
                     {(user && user.googleId) ? 'Wyloguj się' : 'Zaloguj się'}
                 </Button>
             )
         } else {
             return (
                 <Button facebook >
-                    <i className="fab fa-facebook fa-2x"></i>
+                    <FontAwesomeIcon icon={faFacebook} size="2x"/>
                     {(user && user.facebookId) ? 'Wyloguj się' : 'Zaloguj się'}
                 </Button>
             )
