@@ -10,6 +10,7 @@ const AddOrganisation = (props) => {
 	const history = useHistory();
 
 	const submit = async (values) => {
+		console.log(user);
 		const organization = {
 			name: values.facilityName,
 			address: {
@@ -19,7 +20,7 @@ const AddOrganisation = (props) => {
 			},
 			type: values.type,
 			numOfStamps: values.stamps,
-			userId: values.userId
+			userId: user._id
 		};
 		const userData = {
 			name: user.name,

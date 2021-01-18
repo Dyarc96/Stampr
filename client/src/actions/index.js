@@ -98,15 +98,16 @@ export const fetchOrganizationData = orgId => async dispatch => {
 };
 
 export const createOrganization = (organization, user) => async dispatch => {
+	console.log(organization, user);
 	const response = await axios.post('/api/organizations/create-organization/', {
 		name: organization.name,
 		address: organization.address,
 		type: organization.type,
 		numOfStamps: organization.numOfStamps,
-		id: organization.userId,
+		// id: organization.userId,
 		linkedProviders: [
 			{
-				_id: organization.userId,
+				id: organization.userId,
 				isHead: true,
 				firstName: user.name,
 				lastName: user.surname

@@ -59,7 +59,7 @@ module.exports = (app) => {
 
     app.get('/api/organizations/provider/:userId', async (req, res) => {
         const organizations = await Organization.find({
-            "linkedProviders._id": req.params.userId 
+            "linkedProviders.id": req.params.userId 
         });
         try {
             res.send(organizations);
